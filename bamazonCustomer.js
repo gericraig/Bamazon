@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-var Table = require("table");
+var Table = require("cli-table");
 
 var connection = mysql.createConnection({
   host: "localhost",
@@ -31,14 +31,14 @@ function startPrompt() {
 
         type: "confirm",
         name: "confirm",
-        message: "Welcome to Bamazon! Would you like to view our inventory?",
+        message: "All Is Welcome, All Is Wecome",
         default: true
 
     }]).then(function(user) {
         if (user.confirm === true) {
             inventory();
         } else {
-            console.log("Thank you! Come back soon!");
+            console.log("Thank you! Come Again!");
         }
     });
 }
